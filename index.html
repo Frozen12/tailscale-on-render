@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailscale Networking Guide</title>
+<style>
+body{
+  margin:0;
+  font-family:system-ui,Arial,sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  line-height:1.6;
+}
+header{
+  background:#020617;
+  padding:50px 20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+  font-size:36px;
+}
+header p{
+  color:#94a3b8;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:30px 20px;
+}
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+h2{
+  margin-top:0;
+}
+code{
+  background:#020617;
+  padding:4px 6px;
+  border-radius:4px;
+}
+footer{
+  text-align:center;
+  padding:30px;
+  color:#64748b;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Tailscale Networking Guide</h1>
+<p>Simple and secure networking using WireGuard</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>What is Tailscale?</h2>
+<p>
+Tailscale is a zero-configuration VPN built on top of WireGuard. 
+It allows devices to connect securely over the internet as if they were on the same local network.
+</p>
+</div>
+
+<div class="card">
+<h2>Key Features</h2>
+<ul>
+<li>Zero configuration mesh VPN</li>
+<li>Secure WireGuard encryption</li>
+<li>Access servers behind NAT or firewalls</li>
+<li>Works across cloud, containers, and home labs</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Basic Installation</h2>
+<p>Install Tailscale on Linux:</p>
+<pre><code>curl -fsSL https://tailscale.com/install.sh | sh
+tailscale up</code></pre>
+</div>
+
+<div class="card">
+<h2>Common Use Cases</h2>
+<ul>
+<li>Access home servers remotely</li>
+<li>Secure private services in the cloud</li>
+<li>Connect development environments</li>
+<li>Build private networks between containers</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Learning Resources</h2>
+<p>
+Official documentation and tutorials are available on the Tailscale website.
+</p>
+</div>
+
+</div>
+
+<footer>
+Networking Notes • 2026
+</footer>
+
+</body>
+</html>
