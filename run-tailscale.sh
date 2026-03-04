@@ -12,7 +12,7 @@ tailscale_ip=$(/render/tailscale ip)
 echo "Tailscale is up at IP ${tailscale_ip}"
 
 # start ultra-light web server so Render detects an open port
-PORT=${PORT:-10000}
+PORT=${PORT:-8080}
 busybox httpd -f -p $PORT &
 
 # keep tailscaled alive
