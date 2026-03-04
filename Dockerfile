@@ -1,6 +1,6 @@
 FROM debian:latest
 WORKDIR /render
-
+EXPOSE 8080
 ARG TAILSCALE_VERSION
 ENV TAILSCALE_VERSION=$TAILSCALE_VERSION
 
@@ -10,6 +10,7 @@ RUN apt-get -qq update \
     ca-certificates \
     netcat-openbsd \
     wget \
+    busybox \
     dnsutils \
   > /dev/null \
   && apt-get -qq clean \
