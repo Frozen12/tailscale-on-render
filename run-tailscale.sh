@@ -4,11 +4,16 @@
 PID=$!
 
 ADVERTISE_ROUTES=${ADVERTISE_ROUTES:-10.0.0.0/8}
-until /render/tailscale up --authkey="${TAILSCALE_AUTHKEY}" --hostname="${RENDER_SERVICE_NAME}" --advertise-routes="$ADVERTISE_ROUTES"; do
+until /render/tailscale up --authkey="${TAILSCALE_AUTHKEY}" --hostname="${RENDER_SERVICE_NAME}" --advertise-routes="$ADVERTISE_ROUTES" --advertise-exit-node; do
   sleep 0.1
 done
 export ALL_PROXY=socks5://localhost:1055/
 tailscale_ip=$(/render/tailscale ip)
 echo "Tailscale is up at IP ${tailscale_ip}"
 
+# start ultra-light web server so Render detects an open port
+PORT=${PORT:-10000}
+busybox httpd -f -p $PORT &
+
+# keep tailscaled alive
 wait ${PID}
